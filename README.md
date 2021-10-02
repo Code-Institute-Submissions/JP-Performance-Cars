@@ -52,3 +52,24 @@ If there are any improvements, questions or anything at all then please get in t
 * Have some information about JP Performance Cars previous work completed.
 * Visually appealing website
 * Be able to contact JP Performance Cars to enquire about a car which is for sale.
+
+### **User Stories**
+As a **user**:  
+* I want the website to be visually attractive to capture my attention.
+* I want to have some information about JP Performance Cars such as location, services and more.
+* I want to have an intuitive navigation so I can access information straight away.
+* I want to see what cars are for sale.
+* I want to search cars for sale.
+* I want to see pictures of all the cars JP Performance Cars have on sale.
+* I want to be able to make a booking to have my super/sports car serviced for either annual or major service.
+* I want to see what the deposit price is for booking my car in.
+* I want to see information about the car for sale.
+
+As an **owner**:  
+* I want to promote the business in the best way possible.
+* I want to increase bookings by making the booking process easy and intuitive.
+* I want to be able to see all the bookings.
+* I want to have a deposit for a booking to be made to avoid spam bookings.
+* I want to be able CRUD functions for cars for sale.
+* I want to be able to see which parts/cars are the most popular by number of page views.
+* I want to to be able to easily change the home page.
