@@ -74,3 +74,14 @@ As an **owner**:
 * I want to be able CRUD functions for cars for sale.
 * I want to be able to see which parts/cars are the most popular by number of page views.
 * I want to to be able to easily change the home page.
+
+### **User Requirements and Expectations**
+**Requirements**
+* Visually appealing/attractive landing page and website.
+* The possibility to book in car for a service.
+* The possibliity to view my previous/upcoming services.
+* Easy and intuitive to navigate round the website.
+* Easy and intuitive to use on mobile.
+* Ability to contact and enquire.
+* Find information about location, service prices and more.
+* To see imagery of all types of work and business JP Performance Cars offers.
