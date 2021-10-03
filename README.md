@@ -110,3 +110,41 @@ To make sure that there aren't difficulties with the contrast I have used the [c
 #### Fonts
 
 When deciding fonts this came down to what the brand's image is trying to portray which is a luxurious high quality service this is why I have decided to use [Trajan Pro](https://fontsgeek.com/fonts/Trajan-Pro-Regular "JP Performance Cars Font").
+
+#### Structure
+
+All my pages will have two piece header style split horizontally one section with the JP Performance Cars logo.
+My website will have the following pages:
+
+- Home Page  
+   The home page is aimed to be visually attractive, with a luxurious images that gives the brand a premium feel. Seeminglessly easy to navigate and intuitive to provide an engaing experience which makes the user want to continue to browse.
+   
+- Showroom  
+   Here the cars that JP Performance Cars have for sale will be displayed with a image, information about the car. Below there will be some additional information which will be equal for all the rooms.
+
+- Car for sale page  
+   This page is for users to be able to see a more in depth view of the car that took there eye it will showcase more overall information and images it will also allow a user to enquire about a particular car.
+
+  1.  User navigates to a car by the showroom.
+  2.  Cars which are available will have their prices displayed and also have a button to enquire about a particular car.
+  3.  If the user selects deposit they will be then presented to a summary of the selected car and information that is relevant to the customer for example how to receive the car and with a form to finalise the deposit. If the user selects to enquire they will be presented with a form to enquire about the specific vehicle.  
+
+- Book in a service
+  This page is for users who own a supercar such as a Ferrari, Maserati or Lamborghini to book in a service for there supercar.
+
+  1.  User navigates to the book a service page.
+  2.  Fill in the booking form by picking the car you want servicing from a dropdown that has a list of cars JP Performance Cars service and model, the service type and also the date that you would like it to be serviced a calendar will show available dates.
+  3.  User will be taken to a payment form to place a deposit this is to stop the ability of spam bookings and to capture genuine customers.
+
+- Account page  
+   On the account page the user will be able to see previous service bookings.
+
+- Contact
+  The contact page is for a user who is in further assistance regarding either a query.
+  There will be a contact form which when submitted the user is notified by email that there form was sent succesfully.
+
+- About
+  On the about page there will be an overview and information that is relevant about JP Performance Cars this includes location, information and history.
+
+- Testimonials
+  This page will display testimonials and reviews that have been made about JP Performance Cars to provide new customers with an idea of the kind of service they will receive.
