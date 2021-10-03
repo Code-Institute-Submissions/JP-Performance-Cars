@@ -65,6 +65,7 @@ As a **user**:
 * I want to see what the deposit price is for booking my car in.
 * I want to see information about the car for sale.
 
+### **Site Owner Goals**
 As an **owner**:  
 * I want to promote the business in the best way possible.
 * I want to increase bookings by making the booking process easy and intuitive.
