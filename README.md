@@ -105,4 +105,8 @@ As **JP Performance Cars** is primarily a **Ferrari** and Maserati supercar spec
 
 ![JP Performance Cars Colour Scheme](/readme_images/JPPerformanceCarsColours.png "JP Performance Cars Colours")
 
-To make sure that there aren't difficulties with the contrast I have used the contrast checker to ensure a easy to read combination.
+To make sure that there aren't difficulties with the contrast I have used the [contrast checker](https://coolors.co/contrast-checker "Contrast Checker") to ensure a easy to read combination.
+
+#### Fonts
+
+When deciding fonts this came down to what the brand's image is trying to portray which is a luxurious high quality service this is why I have decided to use [Trajan Pro](https://fontsgeek.com/fonts/Trajan-Pro-Regular "JP Performance Cars Font").
