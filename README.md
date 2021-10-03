@@ -91,4 +91,18 @@ As an **owner**:
 * When clicking a link I expect to be taken to the correct page without errors.
 * When navigating to the account page I expect to see details about my booking.
 * When viewing a car for sale I expect the details on the specific car for sale to be accurate and have imagery.
-* When viewing a part for sale I expect the details to have imagery and have accurate information.
+* When making a booking I expect the process to be clear and intuitive.
+
+### **Design Choices **
+
+When deciding on the design of this website it took a lot of thinking and researching. The design of this website has been inspired by other similar kinds of websites but with its uniqueness. The colors that have been picked are colors that are very familiar with the JP Performance Cars brand and also provide a premium look.
+
+To decide on which colors work best with the background and other accent's I have used [Coolors](https://coolors.co/ "Coolors.co").
+
+#### Colors
+
+As **JP Performance Cars** is primarily a **Ferrari** and Maserati supercar specialist I wanted colours that the customers of the brand identified straight away and also colours.
+
+![JP Performance Cars Colour Scheme](/readme_images/JPPerformanceCarsColours.png "JP Performance Cars Colours")
+
+To make sure that there aren't difficulties with the contrast I have used the contrast checker to ensure a easy to read combination.
