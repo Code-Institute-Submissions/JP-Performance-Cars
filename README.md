@@ -84,4 +84,11 @@ As an **owner**:
 * Easy and intuitive to use on mobile.
 * Ability to contact and enquire.
 * Find information about location, service prices and more.
-* To see imagery of all types of work and business JP Performance Cars offers.
+* To see imagery of all types of work and business that JP Performance Cars offers.
+
+**Expectations**
+* When making a booking I expect an email notification with confirmation and details about my booking.
+* When clicking a link I expect to be taken to the correct page without errors.
+* When navigating to the account page I expect to see details about my booking.
+* When viewing a car for sale I expect the details on the specific car for sale to be accurate and have imagery.
+* When viewing a part for sale I expect the details to have imagery and have accurate information.
