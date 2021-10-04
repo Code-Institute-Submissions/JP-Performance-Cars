@@ -127,7 +127,7 @@ My website will have the following pages:
 
   1.  User navigates to a car by the showroom.
   2.  Cars which are available will have their prices displayed and also have a button to enquire about a particular car.
-  3.  If the user selects deposit they will be then presented to a summary of the selected car and information that is relevant to the customer for example how to receive the car and with a form to finalise the deposit. If the user selects to enquire they will be presented with a form to enquire about the specific vehicle.  
+  3.  If the user selects enquire they will be then presented to a summary of the selected car and information that is relevant to the customer with a form to finalise the enquiry.
 
 - Book in a service
   This page is for users who own a supercar such as a Ferrari, Maserati or Lamborghini to book in a service for there supercar.
@@ -148,3 +148,33 @@ My website will have the following pages:
 
 - Testimonials
   This page will display testimonials and reviews that have been made about JP Performance Cars to provide new customers with an idea of the kind of service they will receive.
+
+  ### **Wireframes, Flowchart**
+
+#### **Wireframes**
+
+For building the Wireframes I have used [Balsamic Wireframes](https://balsamiq.com/wireframes/).
+
+In each image there are 3 wireframes:
+
+1. Desktop
+2. Tablet
+3. Mobile
+
+You can find my wireframes below:
+
+- [Home Page](/wireframes/home.PNG "JP Performance Cars Home Page")
+- [Showroom Page](/wireframes/showroom.PNG "JP Performance Cars Showroom Page")
+- [Car For Sale Page](/wireframes/carforsale.PNG "JP Performance Cars Car For Sale Page")
+- [About Page](/wireframes/about.PNG "JP Performance Cars About Page")
+- [Contact Page](/wireframes/contact.PNG "JP Performance Cars Contact Page")
+- [Services Page](/wireframes/services.PNG "JP Performance Cars Services Page")
+- [Testimonials Page](/wireframes/testimonials.PNG "JP Performance Cars Testimonials Page")
+- [Login Page](/wireframes/login.PNG "JP Performance Cars Login Page")
+- [Account Page](/wireframes/account.PNG "JP Performance Cars Account Page")
+
+#### **Flowchart**
+
+I have created a flowchart for the service booking in process you can see that flow here:
+
+![Booking In Process](/readme_images/JPPerformanceCarsBookingProcess.png "JP Performance Cars Account Page")
