@@ -178,3 +178,9 @@ You can find my wireframes below:
 I have created a flowchart for the service booking in process you can see that flow here:
 
 ![Booking In Process](/readme_images/JPPerformanceCarsBookingProcess.png "JP Performance Cars Account Page")
+
+#### **Database Structure**
+
+For the database structure I have decided to map out the database models using [Draw io](https://draw.io "Drawing App").
+
+- [Database Structure](/readme_images/jpdbstructure.png "JP Performance Cars Database Structure")
