@@ -184,3 +184,15 @@ I have created a flowchart for the service booking in process you can see that f
 For the database structure I have decided to map out the database models using [Draw io](https://draw.io "Drawing App").
 
 - [Database Structure](/readme_images/jpdbstructure.png "JP Performance Cars Database Structure")
+
+### **Features**
+- Sign up and sign in functionality using a package "allauth".
+- Home page hero image to capture attention and get users browsing the showroom.
+- A Showroom of cars that are listed for sale with images and descriptions.
+- A service booking page to be able to book your specific car in for a service.
+- A contact page for messaging.
+- A testimonials page to show previous reviews.
+
+#### **Future Features**
+- List cars up for auction.
+- Sign up and sign in functionality with social medias.
