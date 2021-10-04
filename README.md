@@ -196,3 +196,154 @@ For the database structure I have decided to map out the database models using [
 #### **Future Features**
 - List cars up for auction.
 - Sign up and sign in functionality with social medias.
+
+## **Technologies used**
+
+### **Languages**
+
+- [HTML](https://en.wikipedia.org/wiki/HTML)
+- [CSS](https://en.wikipedia.org/wiki/Cascading_Style_Sheets)
+- [JavaScript](https://en.wikipedia.org/wiki/JavaScript)
+- [Python](https://www.python.org/)
+
+### **Libraries and Frameworks**
+
+- [Font Awesome](https://fontawesome.com/)
+- [Bootstrap](https://getbootstrap.com/)
+- [Google Fonts](https://fonts.google.com/)
+- [jQuery](https://jquery.com/)
+- [Stripe](http://stripe.com/)
+
+### **Tools**
+
+- [Django](https://www.djangoproject.com/)
+- [Git](https://git-scm.com/)
+- [Visual Studio Code](https://code.visualstudio.com/)
+- [Heroku](https://www.heroku.com/)
+- [Balsamic](https://balsamiq.com/wireframes/)
+- [W3C HTML Validation Service](https://validator.w3.org/)
+- [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/)
+- [draw.io](https://draw.io)
+  [Back to Top](#table-of-contents)
+- [Pipenv](https://pypi.org/project/pipenv/)
+
+## Testing
+
+## Bugs
+
+## **Deployment**
+
+### Local Deployment
+
+I have created this project using Github, Git and [Visual Studio Code](https://code.visualstudio.com/) using vscode extensions to help me code.
+When I make a change and am happy with it I commit to git using "git commit -m "commit message"" followed by a "git push" to my GitHub repository.
+I deployed this project to Heroku and used "git push heroku master" to make sure pushes to my GitHub repo were also pushed to Heroku.
+This project can be ran locally by following the following steps:
+I will now list how list a step by step to run this project. You will need to install packages so the project runs as intended see [here](https://packaging.python.org/guides/installing-using-pip-and-virtual-environments/) for more information about installing them.
+
+To clone the project:
+
+1. From the application's repository, click the "code" button and download the zip of the repository.
+   Alternatively, you can clone the repository using the following line in your terminal:
+   ```
+   git clone "LINK"
+   ```
+1. Access the folder in your terminal window and install the application's "requirements.txt" using the following command:
+   ```
+   pip3 install -r requirements.txt
+   ```
+1. In your IDE, create a file containing your environmental variables called env.py at the root level of the application.
+   It will need to contain the following lines and variables:
+
+   ```
+   import os
+   os.environ[""] = ""
+   ```
+
+   If you plan on pushing this application to a public repository, ensure that env.py is added to your .gitignore file.
+
+1. Migrate the database models with the following command
+   ```
+   python3 manage.py migrate
+   ```
+1. Create a superuser and set up the credentials with the following command
+   ```
+   python3 manage.py createsuperuser
+   ```
+1. Run the app with this command
+   ```
+   python manage.py runserver
+   ```
+   The address to access the website is displayed in the terminal  
+   Add /admin to the end to access the admin panel with your superuser credentials
+
+### To deploy your project on Heroku, use the following steps:
+
+1. Login to your Heroku account and create a new app. Choose your region.
+1. Once the app is created click on the resources button and choose the Heroku Postgres to attach a postgres database to your project.
+   ![Add Postgres Database](readme_images/heroku_postgres-install.png)
+   <!-- 1. Scroll down to "deployment method"-section. Choose "Github" for automatic deployment. -->
+   <!-- 1. From the inputs below, make sure your github user is selected, and then enter the name for your repo. Click "search". When it finds the repo, click the "connect" button. -->
+1. Scroll back up and click "settings". Scroll down and click "Reveal config vars". Set up the same variables as in your env.py ():
+   !You shouldn't set the DEBUG variable in under config vars, only in your env.py to prevent DEBUG being active on live website.
+   ```
+   DATABASE_URL
+   ```
+1. From this screen, copy the value of DATABASE_URL
+1. After this go to your settings.py and comment out the default database configuration and add:
+   ```
+   DATABASES = {
+       'default': dj_database_url.parse(os.environ.get('< Put your DATABASE_URL here >'))
+   }
+   ```
+1. Migrate again with the following command
+   ```
+   python3 manage.py migrate
+   ```
+1. After migrations are complete, change database configurations to:
+
+```
+    if 'DATABASE_URL' in os.environ:
+        DATABASES = {
+            'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
+        }
+    else:
+        DATABASES = {
+            'default': {
+                'ENGINE': 'django.db.backends.sqlite3',
+                'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+            }
+        }
+```
+
+This set up will allow your site to use Postgres in deployment and sqlite3 in development.
+
+1. Create a superuser for the postgres database so you can have access to the django admin by setting up the credentials with the following command
+   ```
+   python3 manage.py createsuperuser
+   ```
+1. Create a Procfile freeze your requirements by running the following commands:
+   Requirements:
+   ```
+   pip3 freeze --local > requirements.txt
+   ```
+   Procfile:
+   ```
+   echo web: python app.py > Procfile
+   ```
+1. The Procfile should contain the following line:
+
+   ```
+   web: gunicorn <project_name>.wsgi:application
+   ```
+
+1. Add your files and commit them to GITHUB by running the following commands:
+   ```
+   git add -A
+   git commit -m "Your commit message"
+   git push
+   ```
+1. Set up AWS
+1. Go back to HEROKU and click "Deploy". Scroll down and click "Enable automatic deployment".
+1. Just beneath, click "Deploy branch". Heroku will now start building the app. When the build is complete, click "view app" to open it.
+1. In order to commit your changes to the branch, use git push to push your changes.
