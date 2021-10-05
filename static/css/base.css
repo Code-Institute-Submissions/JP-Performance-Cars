@@ -74,6 +74,20 @@ a.jpc-btn-link:hover {
     background-position: center;
 }
 
+.parallax {
+    background-image: url('/media/aston-martin.jpg');
+    background-attachment: fixed;
+    height: 50vh;
+}
+
+.parallax-info {
+    top: 50px;
+}
+
+strong.highlight {
+    color: #d00003 !important;
+}
+
 @media screen and (max-width:768px) {
     .hero-caption {
         width: 90vw;
