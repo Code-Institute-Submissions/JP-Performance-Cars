@@ -39,14 +39,14 @@ header {
 }
 
 .hero-caption {
-    margin: auto;
     background: #000000ab;
-    padding: 6rem;
-    position: relative;
-    top: 40%;
-    width: 35%;
-    position: relative;
+    padding-top: 2rem;
+    margin: auto;
     text-align: center;
+    top: 40%;
+    width: 50%;
+    height: 25vh;
+    position: relative;
 }
 
 .jpc-btn {
@@ -67,6 +67,15 @@ a.jpc-btn-link {
 
 a.jpc-btn-link:hover {
     background-color: #d00003b3 !important;
+}
+
+.jpc-black-bg {
+    background-color: rgb(0 0 0 / 88%) !important;
+}
+
+.jpc-box-shadow {
+    -webkit-box-shadow: -8px -5px 0px 0px #d00003;
+    box-shadow: -8px -5px 0px 0px #d00003;
 }
 
 .info-banner {
