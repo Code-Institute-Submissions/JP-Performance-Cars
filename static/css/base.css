@@ -7,6 +7,10 @@
     font-family: Trajan Pro;
 }
 
+header {
+    z-index: 99;
+}
+
 .top-header {
     background-color: rgb(0 0 0 / 88%) !important;
 }
@@ -27,13 +31,11 @@
 }
 
 .hero-image {
-    background-image: linear-gradient(179deg, #000000b5, #00000000), url('/media/home-hero.jpg');
+    background-image: linear-gradient(179deg, #000000b5, #00000000), url('/media/home-hero2.jpg');
     background-position: bottom;
-    position: absolute;
-    z-index: -99;
-    top: 0;
-    height: 800px;
-    width: 100vw;
+    position: relative;
+    height: 100vh;
+    width: 100%;
 }
 
 .hero-caption {
