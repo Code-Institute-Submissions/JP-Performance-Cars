@@ -1,0 +1,23 @@
+.top-header {
+    background-color: rgb(0 0 0 / 88%) !important;
+}
+
+.overlay {
+    background: linear-gradient(179deg, #000000b5, #00000000);
+    background-position: bottom;
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    height: 800px;
+    width: 100vw;
+}
+
+.hero-image {
+    background-image: url('/media/home-hero.jpg');
+    background-position: bottom;
+    position: absolute;
+    z-index: -99;
+    top: 0;
+    height: 800px;
+    width: 100vw;
+}
