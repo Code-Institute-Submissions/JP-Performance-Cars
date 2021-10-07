@@ -137,4 +137,13 @@ strong.highlight {
     .hero-caption {
         width: 90vw;
     }
+
+    .parallax {
+        height: 100vh;
+    }
+
+    #block-services,
+    #block-showroom {
+        height: 240px;
+    }
 }
