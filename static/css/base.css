@@ -126,6 +126,13 @@ strong.highlight {
     background-size: 103% 103%;
 }
 
+.showroom {
+    background-image: url("/media/ferrari-f40.jpg");
+    height: 330px;
+    background-position: center;
+    background-size: 100%;
+}
+
 @media screen and (max-width:768px) {
     .hero-caption {
         width: 90vw;
