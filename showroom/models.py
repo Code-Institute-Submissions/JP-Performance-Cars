@@ -18,7 +18,7 @@ class Manufacturer(models.Model):
 class Model(models.Model):
     
     class Meta:
-        verbose_name_plural = 'Manufacturers'
+        verbose_name_plural = 'Models'
 
     name = models.CharField(max_length=254)
     friendly_name = models.CharField(max_length=254, null=True, blank=True)

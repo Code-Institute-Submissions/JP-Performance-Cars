@@ -100,15 +100,15 @@
                 {% endif %}
                 <div class="card-body p-0">
                     <div class="bg-dark text-white p-2">
-                        <p class="mb-0">{{ car.manufacturer}}{{ car.name }}</p>
+                        <p class="mb-0">{{ car.manufacturer}} {{ car.name }}</p>
                         <p class="mb-0 small">{{ car.engine_information }}</p>
                     </div>
                 </div>
-                <div class="card-footer bg-white pt-0 border-0 text-left">
+                <div class="card-footer bg-white pt-1 border-0 text-left">
                     <div class="row">
                         <div class="col">
                             {% if car.status == 1 %}
-                            <p class="lead mb-0 text-left font-weight-bold">£{{ car.sale_price }}</p>
+                            <p class="lead mb-0 text-left font-weight-bold">£POA</p>
                             {% endif %}
                             {% if car.status == 2 %}
                             <p class="lead mb-0 text-left font-weight-bold">RESERVED</p>
@@ -124,11 +124,11 @@
                             </p>
                             {% endif %}
                         </div>
-                        {% endfor %}
                     </div>
                 </div>
             </div>
         </div>
+        {% endfor %}
     </div>
 </div>
 {% endblock %}
