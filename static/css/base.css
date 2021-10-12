@@ -61,7 +61,6 @@ header {
 
 a.jpc-btn-link {
     border: 1px solid #d00003 !important;
-    ;
     color: #fff !important;
 }
 
@@ -127,10 +126,12 @@ strong.highlight {
 }
 
 .showroom {
-    background-image: url("/media/ferrari-f40.jpg");
+    background-image: url(/media/ferrari-f40.jpg);
     height: 330px;
     background-position: center;
     background-size: 100%;
+    display: flex;
+    align-items: end;
 }
 
 @media screen and (max-width:768px) {

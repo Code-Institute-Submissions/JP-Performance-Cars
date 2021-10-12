@@ -1,9 +1,16 @@
 from django.shortcuts import render
+from .models import Car
 
 # Create your views here.
 
 
 def showroom(request):
-    template = 'showroom/showroom.html'
 
-    return render(request, template)
+    cars = Car.objects.all()
+
+    template = 'showroom/showroom.html'
+    context = {
+        'cars_for_sale': cars,
+    }
+    
+    return render(request, template, context)

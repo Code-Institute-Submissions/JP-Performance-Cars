@@ -2,13 +2,13 @@
 {% load static %}
 
 {% block content %}
-<div class="showroom">
-    <h2 class="text-white pb-2">Showroom</h2>
+<div class="showroom px-4">
+    <h2 class="text-white pb-2 p-2 jpc-black-bg">Showroom</h2>
 </div>
 <div class="container">
-    <div class="row filter-bar">
-        <div class="col-12 col-md-4">
-            <select name="" id="">
+    <div class="row filter-bar mt-3">
+        <div class="col-12 col-md-3">
+            <select class="form-select" name="" id="">
                 <option value="reset" {% if current_sorting == 'None_None' %}selected{% endif %}>Sort by...</option>
                 <option value="price_asc" {% if current_sorting == 'price_asc' %}selected{% endif %}>Price (low to high)
                 </option>
@@ -26,8 +26,8 @@
                     (Z-A)</option>
             </select>
         </div>
-        <div class="col-12 col-md-4">
-            <select name="" id="">
+        <div class="col-12 col-md-3">
+            <select class="form-select" name="" id="">
                 <option value="reset" {% if current_sorting == 'None_None' %}selected{% endif %}>Sort by...</option>
                 <option value="price_asc" {% if current_sorting == 'price_asc' %}selected{% endif %}>Price (low to high)
                 </option>
@@ -45,8 +45,8 @@
                     (Z-A)</option>
             </select>
         </div>
-        <div class="col-12 col-md-4">
-            <select name="" id="">
+        <div class="col-12 col-md-3">
+            <select class="form-select" name="" id="">
                 <option value="reset" {% if current_sorting == 'None_None' %}selected{% endif %}>Sort by...</option>
                 <option value="price_asc" {% if current_sorting == 'price_asc' %}selected{% endif %}>Price (low to high)
                 </option>
@@ -64,8 +64,8 @@
                     (Z-A)</option>
             </select>
         </div>
-        <div class="col-12 col-md-4">
-            <select name="" id="">
+        <div class="col-12 col-md-3">
+            <select class="form-select" name="" id="">
                 <option value="reset" {% if current_sorting == 'None_None' %}selected{% endif %}>Sort by...</option>
                 <option value="price_asc" {% if current_sorting == 'price_asc' %}selected{% endif %}>Price (low to high)
                 </option>
@@ -83,6 +83,11 @@
                     (Z-A)</option>
             </select>
         </div>
+    </div>
+    <div class="row">
+        {% for car in cars_for_sale %}
+
+        {% endfor %}
     </div>
 </div>
 {% endblock %}
