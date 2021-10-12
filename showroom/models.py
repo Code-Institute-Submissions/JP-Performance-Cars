@@ -49,7 +49,7 @@ class Car(models.Model):
     )    
     engine_information = models.CharField(max_length=50, null=False, blank=False)
     mileage = models.IntegerField(null=False, blank=False)
-    sale_price = models.DecimalField(max_digits=6, decimal_places=2, default=False, null=True, blank=True)
+    sale_price = models.IntegerField(default=False, null=True, blank=True)
     service_price = models.DecimalField(max_digits=6, decimal_places=2, default=False, null=True, blank=True)
     manufacturer = models.ForeignKey('Manufacturer', null=True, blank=True, on_delete=models.SET_NULL)
     model = models.ForeignKey('Model', null=True, blank=True, on_delete=models.SET_NULL)

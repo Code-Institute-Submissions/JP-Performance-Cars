@@ -83,11 +83,52 @@
                     (Z-A)</option>
             </select>
         </div>
+        <hr class="mt-4">
     </div>
     <div class="row">
         {% for car in cars_for_sale %}
-
-        {% endfor %}
+        <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
+            <div class="card h-100 forsalebox text-center">
+                {% if car.image %}
+                <a href="">
+                    <img class="card-img-top img-fluid" src="{{ car.image.url }}" alt="{{ car.name }}">
+                </a>
+                {% else %}
+                <a href="">
+                    <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ car.name }}">
+                </a>
+                {% endif %}
+                <div class="card-body p-0">
+                    <div class="bg-dark text-white p-2">
+                        <p class="mb-0">{{ car.manufacturer}}{{ car.name }}</p>
+                        <p class="mb-0 small">{{ car.engine_information }}</p>
+                    </div>
+                </div>
+                <div class="card-footer bg-white pt-0 border-0 text-left">
+                    <div class="row">
+                        <div class="col">
+                            {% if car.status == 1 %}
+                            <p class="lead mb-0 text-left font-weight-bold">£{{ car.sale_price }}</p>
+                            {% endif %}
+                            {% if car.status == 2 %}
+                            <p class="lead mb-0 text-left font-weight-bold">RESERVED</p>
+                            {% endif %}
+                            {% if car.status == 3 %}
+                            <p class="lead mb-0 text-left font-weight-bold">SOLD.</p>
+                            {% endif %}
+                            {% if car.manufacturer %}
+                            <p class="small mt-1 mb-0">
+                                <a href="" class="text-muted">
+                                    <i class="fas fa-tag mr-1"></i>
+                                </a>
+                            </p>
+                            {% endif %}
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 {% endblock %}
