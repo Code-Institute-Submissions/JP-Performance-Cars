@@ -7,80 +7,121 @@
 </div>
 <div class="container">
     <div class="row filter-bar mt-3">
+        <form class="mb-2">
+            <h3>Search Vehicle</h3>
+            <div class="row">
+                <div class="col-12 col-md-3">
+                    <select class="form-select" name="" id="car-search">
+                        <option value="reset">Car
+                            Manufacturer
+                        </option>
+                        {% for manufacturer in manufacturers %}
+                        <option value="{{ manufacturer }}"
+                            {% if current_manufacturer == manufacturer.name %}selected{% endif %}>{{ manufacturer }}
+                        </option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="col-12 col-md-3">
+                    <select class="form-select" name="" id="car-search">
+                        <option value="reset" {% if current_sorting == 'None_None' %}selected{% endif %}>Car
+                            Models
+                        </option>
+                        {% for model in models %}
+                        <option value="{{ model }}">{{ model }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="col-12 col-md-3">
+                    <select class="form-select" name="" id="car-search">
+                        <option value="reset" {% if current_sorting == 'None_None' %}selected{% endif %}>
+                            Min Price
+                        </option>
+                        <option value="10000">
+                            £10000
+                        </option>
+                        <option value="20000">
+                            £20000
+                        </option>
+                        <option value="30000">
+                            £30000
+                        </option>
+                        <option value="40000">
+                            £40000
+                        </option>
+                        <option value="50000">
+                            £50000
+                        </option>
+                        <option value="60000">
+                            £60000
+                        </option>
+                        <option value="£70000">
+                            £70000
+                        </option>
+                        <option value="£80000">
+                            £80000
+                        </option>
+                        <option value="£90000">
+                            £90000
+                        </option>
+                        <option value="£100000">
+                            £100000
+                        </option>
+                    </select>
+                </div>
+                <div class="col-12 col-md-3">
+                    <select class="form-select" name="" id="car-search">
+                        <option value="reset" {% if current_sorting == 'None_None' %}selected{% endif %}>
+                            Max Price
+                        </option>
+                        <option value="10000">
+                            £10000
+                        </option>
+                        <option value="20000">
+                            £20000
+                        </option>
+                        <option value="30000">
+                            £30000
+                        </option>
+                        <option value="40000">
+                            £40000
+                        </option>
+                        <option value="50000">
+                            £50000
+                        </option>
+                        <option value="60000">
+                            £60000
+                        </option>
+                        <option value="£70000">
+                            £70000
+                        </option>
+                        <option value="£80000">
+                            £80000
+                        </option>
+                        <option value="£90000">
+                            £90000
+                        </option>
+                        <option value="£100000">
+                            £100000
+                        </option>
+                    </select>
+                </div>
+            </div>
+            <button class="btn jpc-btn-black mt-2 float-end"><i class="fas fa-search"></i></button>
+        </form>
         <div class="col-12 col-md-3">
-            <select class="form-select" name="" id="">
-                <option value="reset" {% if current_sorting == 'None_None' %}selected{% endif %}>Sort by...</option>
-                <option value="price_asc" {% if current_sorting == 'price_asc' %}selected{% endif %}>Price (low to high)
+            <select class="form-select" name="" id="sort-selector">
+                <option value="reset" {% if current_sorting == 'None_None' %}selected{% endif %}>Sort by...
                 </option>
-                <option value="price_desc" {% if current_sorting == 'price_desc' %}selected{% endif %}>Price (high to
-                    low)</option>
-                <option value="rating_asc" {% if current_sorting == 'rating_asc' %}selected{% endif %}>Rating (low to
-                    high)</option>
-                <option value="rating_desc" {% if current_sorting == 'rating_desc' %}selected{% endif %}>Rating (high to
+                <option value="sale_price-asc" {% if current_sorting == 'sale_price_asc' %}selected{% endif %}>Price
+                    (low to
+                    high)
+                </option>
+                <option value="sale_price-desc" {% if current_sorting == 'sale_price_desc' %}selected{% endif %}>Price
+                    (high to
                     low)</option>
                 <option value="name_asc" {% if current_sorting == 'name_asc' %}selected{% endif %}>Name (A-Z)</option>
                 <option value="name_desc" {% if current_sorting == 'name_desc' %}selected{% endif %}>Name (Z-A)</option>
-                <option value="category_asc" {% if current_sorting == 'category_asc' %}selected{% endif %}>Category
-                    (A-Z)</option>
-                <option value="category_desc" {% if current_sorting == 'category_desc' %}selected{% endif %}>Category
-                    (Z-A)</option>
-            </select>
-        </div>
-        <div class="col-12 col-md-3">
-            <select class="form-select" name="" id="">
-                <option value="reset" {% if current_sorting == 'None_None' %}selected{% endif %}>Sort by...</option>
-                <option value="price_asc" {% if current_sorting == 'price_asc' %}selected{% endif %}>Price (low to high)
-                </option>
-                <option value="price_desc" {% if current_sorting == 'price_desc' %}selected{% endif %}>Price (high to
-                    low)</option>
-                <option value="rating_asc" {% if current_sorting == 'rating_asc' %}selected{% endif %}>Rating (low to
-                    high)</option>
-                <option value="rating_desc" {% if current_sorting == 'rating_desc' %}selected{% endif %}>Rating (high to
-                    low)</option>
-                <option value="name_asc" {% if current_sorting == 'name_asc' %}selected{% endif %}>Name (A-Z)</option>
-                <option value="name_desc" {% if current_sorting == 'name_desc' %}selected{% endif %}>Name (Z-A)</option>
-                <option value="category_asc" {% if current_sorting == 'category_asc' %}selected{% endif %}>Category
-                    (A-Z)</option>
-                <option value="category_desc" {% if current_sorting == 'category_desc' %}selected{% endif %}>Category
-                    (Z-A)</option>
-            </select>
-        </div>
-        <div class="col-12 col-md-3">
-            <select class="form-select" name="" id="">
-                <option value="reset" {% if current_sorting == 'None_None' %}selected{% endif %}>Sort by...</option>
-                <option value="price_asc" {% if current_sorting == 'price_asc' %}selected{% endif %}>Price (low to high)
-                </option>
-                <option value="price_desc" {% if current_sorting == 'price_desc' %}selected{% endif %}>Price (high to
-                    low)</option>
-                <option value="rating_asc" {% if current_sorting == 'rating_asc' %}selected{% endif %}>Rating (low to
-                    high)</option>
-                <option value="rating_desc" {% if current_sorting == 'rating_desc' %}selected{% endif %}>Rating (high to
-                    low)</option>
-                <option value="name_asc" {% if current_sorting == 'name_asc' %}selected{% endif %}>Name (A-Z)</option>
-                <option value="name_desc" {% if current_sorting == 'name_desc' %}selected{% endif %}>Name (Z-A)</option>
-                <option value="category_asc" {% if current_sorting == 'category_asc' %}selected{% endif %}>Category
-                    (A-Z)</option>
-                <option value="category_desc" {% if current_sorting == 'category_desc' %}selected{% endif %}>Category
-                    (Z-A)</option>
-            </select>
-        </div>
-        <div class="col-12 col-md-3">
-            <select class="form-select" name="" id="">
-                <option value="reset" {% if current_sorting == 'None_None' %}selected{% endif %}>Sort by...</option>
-                <option value="price_asc" {% if current_sorting == 'price_asc' %}selected{% endif %}>Price (low to high)
-                </option>
-                <option value="price_desc" {% if current_sorting == 'price_desc' %}selected{% endif %}>Price (high to
-                    low)</option>
-                <option value="rating_asc" {% if current_sorting == 'rating_asc' %}selected{% endif %}>Rating (low to
-                    high)</option>
-                <option value="rating_desc" {% if current_sorting == 'rating_desc' %}selected{% endif %}>Rating (high to
-                    low)</option>
-                <option value="name_asc" {% if current_sorting == 'name_asc' %}selected{% endif %}>Name (A-Z)</option>
-                <option value="name_desc" {% if current_sorting == 'name_desc' %}selected{% endif %}>Name (Z-A)</option>
-                <option value="category_asc" {% if current_sorting == 'category_asc' %}selected{% endif %}>Category
-                    (A-Z)</option>
-                <option value="category_desc" {% if current_sorting == 'category_desc' %}selected{% endif %}>Category
-                    (Z-A)</option>
             </select>
         </div>
         <hr class="mt-4">
@@ -100,7 +141,7 @@
                 {% endif %}
                 <div class="card-body p-0">
                     <div class="bg-dark text-white p-2">
-                        <p class="mb-0">{{ car.manufacturer}} {{ car.name }}</p>
+                        <p class="mb-0">{{ car.name }}</p>
                         <p class="mb-0 small">{{ car.engine_information }}</p>
                     </div>
                 </div>
@@ -108,7 +149,11 @@
                     <div class="row">
                         <div class="col">
                             {% if car.status == 1 %}
+                            {% if car.sale_price %}
+                            <p class="lead mb-0 text-left font-weight-bold">£{{ car.sale_price }}</p>
+                            {% else %}
                             <p class="lead mb-0 text-left font-weight-bold">£POA</p>
+                            {% endif %}
                             {% endif %}
                             {% if car.status == 2 %}
                             <p class="lead mb-0 text-left font-weight-bold">RESERVED</p>
@@ -118,9 +163,7 @@
                             {% endif %}
                             {% if car.manufacturer %}
                             <p class="small mt-1 mb-0">
-                                <a href="" class="text-muted">
-                                    <i class="fas fa-tag mr-1"></i>
-                                </a>
+                                {{ car.manufacturer }}
                             </p>
                             {% endif %}
                         </div>
