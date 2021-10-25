@@ -12,6 +12,7 @@ def showroom(request):
 
     cars = Car.objects.all()
     manufacturers = Manufacturer.objects.all()
+    manufacturer = None
     models = Model.objects.all()
     query = None
     sort = None
@@ -35,15 +36,28 @@ def showroom(request):
         if 'manufacturer' in request.GET:
             manufacturer = request.GET['manufacturer']
             cars = Car.objects.filter(manufacturer__name=manufacturer)
+
+        if 'manufacturerq' in request.GET:
+            manufacturerQuery = request.GET['manufacturerq']
+            modelQuery = request.GET['modelq']
+            min_priceQuery = request.GET['min_priceq']
+            max_priceQuery = request.GET['max_priceq']
+            vehicle_search = f'{manufacturerQuery}&{modelQuery}&{min_priceQuery}&{max_priceQuery}'
+            if not vehicle_search:
+                messages.error(request,
+                               ("You didn't enter any search criteria!"))
+                return redirect(reverse('showroom'))
+
+            queries = Q(name__icontains=modelQuery) | Q(description__icontains=manufacturerQuery)
+            cars = Car.objects.filter(queries)
  
 
     current_sorting = f'{sort}_{direction}'
-    print(manufacturers)
+
     context = {
         'cars_for_sale': cars,
         'current_manufacturer': manufacturer,
         'manufacturers': manufacturers,
-        'search_term': query,
         'models': models,
         'current_sorting': current_sorting,
     }

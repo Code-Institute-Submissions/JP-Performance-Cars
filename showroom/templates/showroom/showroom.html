@@ -7,11 +7,11 @@
 </div>
 <div class="container">
     <div class="row filter-bar mt-3">
-        <form class="mb-2">
+        <form method="GET" action="{% url 'showroom' %}" class="mb-2" id="vehicle-search">
             <h3>Search Vehicle</h3>
             <div class="row">
                 <div class="col-12 col-md-3">
-                    <select class="form-select" name="" id="car-search">
+                    <select class="form-select" name="manufacturerq" id="car-search">
                         <option value="reset">Car
                             Manufacturer
                         </option>
@@ -23,7 +23,7 @@
                     </select>
                 </div>
                 <div class="col-12 col-md-3">
-                    <select class="form-select" name="" id="car-search">
+                    <select class="form-select" name="modelq" id="car-search">
                         <option value="reset" {% if current_sorting == 'None_None' %}selected{% endif %}>Car
                             Models
                         </option>
@@ -33,7 +33,7 @@
                     </select>
                 </div>
                 <div class="col-12 col-md-3">
-                    <select class="form-select" name="" id="car-search">
+                    <select class="form-select" name="min_priceq" id="car-search">
                         <option value="reset" {% if current_sorting == 'None_None' %}selected{% endif %}>
                             Min Price
                         </option>
@@ -70,7 +70,7 @@
                     </select>
                 </div>
                 <div class="col-12 col-md-3">
-                    <select class="form-select" name="" id="car-search">
+                    <select class="form-select" name="max_priceq" id="car-search">
                         <option value="reset" {% if current_sorting == 'None_None' %}selected{% endif %}>
                             Max Price
                         </option>
@@ -120,10 +120,14 @@
                 <option value="sale_price-desc" {% if current_sorting == 'sale_price_desc' %}selected{% endif %}>Price
                     (high to
                     low)</option>
-                <option value="name_asc" {% if current_sorting == 'name_asc' %}selected{% endif %}>Name (A-Z)</option>
-                <option value="name_desc" {% if current_sorting == 'name_desc' %}selected{% endif %}>Name (Z-A)</option>
+                <option value="name-asc" {% if current_sorting == 'name-asc' %}selected{% endif %}>Name (A-Z)</option>
+                <option value="name-desc" {% if current_sorting == 'name-desc' %}selected{% endif %}>Name (Z-A)</option>
             </select>
+            {% if current_sorting != 'None_None' %}
+            <span class="small"><a href="{% url 'showroom' %}">Showroom Home</a> | </span>
+            {% endif %}
         </div>
+        <span class="text-end">{{ cars_for_sale|length }} Cars found</span>
         <hr class="mt-4">
     </div>
     <div class="row">
@@ -174,4 +178,29 @@
         {% endfor %}
     </div>
 </div>
+{% endblock %}
+{% block postloadjs %}
+{{ block.super }}
+<script>
+    $('#sort-selector').change(function () {
+        var selector = $(this);
+        var currentUrl = new URL(window.location)
+
+        var selectedVal = selector.val()
+        if (selectedVal != "reset") {
+            var sort = selectedVal.split("-")[0]
+            var direction = selectedVal.split("-")[1]
+
+            currentUrl.searchParams.set("sort", sort)
+            currentUrl.searchParams.set("direction", direction)
+
+            window.location.replace(currentUrl)
+        } else {
+            currentUrl.searchParams.delete("sort")
+            currentUrl.searchParams.delete("direction")
+
+            window.location.replace(currentUrl)
+        }
+    })
+</script>
 {% endblock %}

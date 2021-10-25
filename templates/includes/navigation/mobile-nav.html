@@ -6,7 +6,7 @@
                 aria-label="Toggle navigation">
                 <i class="fas fa-bars fa-lg"></i>
             </button>
-            <a href="/" class="col-6">
+            <a href="{% url 'home' %}" class="col-6">
                 <img src="/media/jpcarswhite.png" alt="JP Performance Cars logo" class="img-fluid" />
             </a>
             <a class="btn text-white btn-lg border-0 col-2" href="tel:+01543 682388">
@@ -15,15 +15,29 @@
         </div>
         <div class="collapse navbar-collapse" id="mobile-menu">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                <li><a href="{% url 'home' %}" class="nav-link px-2 link-dark">HOME</a></li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle px-2 link-dark" href="{% url 'showroom' %}"
+                        data-bs-toggle="dropdown" aria-expanded="false">SHOWROOM</a>
+                    <div class="dropdown-menu jpc-black-bg" aria-labelledby="dropdownMenu2">
+                        <a class="nav-link dropdown-item px-2 link-dark" href="{% url 'showroom' %}">All Cars</a>
+                        <a class="nav-link dropdown-item px-2 link-dark"
+                            href="{% url 'showroom' %}?manufacturer=Ferrari">Ferrari's
+                            For Sale</a>
+                        <a class="nav-link dropdown-item px-2 link-dark"
+                            href="{% url 'showroom' %}?manufacturer=Maserati">Maserati's
+                            For Sale</a>
+                        <a class="nav-link dropdown-item px-2 link-dark"
+                            href="{% url 'showroom' %}?manufacturer=Porsche">Porsche's
+                            For Sale</a>
+                    </div>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link disabled">Disabled</a>
-                </li>
+                <li><a href="#" class="nav-link px-2 link-dark">BOOK IN</a></li>
+                <li><a href="#" class="nav-link px-2 link-dark">ABOUT</a></li>
+                <li><a href="#" class="nav-link px-2 link-dark">CONTACT</a></li>
+                <li><a href="#" class="nav-link px-2 link-dark">SERVICES</a></li>
+                <li><a href="#" class="nav-link px-2 link-dark">TESTIMONIALS</a></li>
+                <li><a href="#" class="nav-link px-2 link-dark">ACCOUNT</a></li>
             </ul>
         </div>
     </nav>
