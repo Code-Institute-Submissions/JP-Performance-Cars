@@ -1,10 +1,18 @@
 {% extends 'base.html' %}
 {% load static %}
 
-{% block content %}
+{% block page_header %}
+<header class="position-fixed w-100">
+    {% include 'includes/navigation/top-header.html' %}
+    {% include 'includes/navigation/second-header.html' %}
+    {% include 'includes/navigation/mobile-nav.html' %}
+</header>
 <div class="showroom px-4">
     <h2 class="text-white pb-2 p-2 jpc-black-bg">Showroom</h2>
 </div>
+{% endblock %}
+
+{% block content %}
 <div class="container">
     <div class="row filter-bar mt-3">
         <form method="GET" action="{% url 'showroom' %}" class="mb-2" id="vehicle-search">
@@ -123,9 +131,6 @@
                 <option value="name-asc" {% if current_sorting == 'name-asc' %}selected{% endif %}>Name (A-Z)</option>
                 <option value="name-desc" {% if current_sorting == 'name-desc' %}selected{% endif %}>Name (Z-A)</option>
             </select>
-            {% if current_sorting != 'None_None' %}
-            <span class="small"><a href="{% url 'showroom' %}">Showroom Home</a> | </span>
-            {% endif %}
         </div>
         <span class="text-end">{{ cars_for_sale|length }} Cars found</span>
         <hr class="mt-4">
@@ -135,11 +140,11 @@
         <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
             <div class="card h-100 forsalebox text-center">
                 {% if car.image %}
-                <a href="">
+                <a href="{% url 'car_detail' car.id %}">
                     <img class="card-img-top img-fluid" src="{{ car.image.url }}" alt="{{ car.name }}">
                 </a>
                 {% else %}
-                <a href="">
+                <a href="{% url 'car_detail' car.id %}">
                     <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ car.name }}">
                 </a>
                 {% endif %}

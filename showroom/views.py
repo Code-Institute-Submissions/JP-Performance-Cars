@@ -65,3 +65,16 @@ def showroom(request):
     template = 'showroom/showroom.html'
     
     return render(request, template, context)
+
+
+def car_detail(request, car_id):
+    """ A view to show individual car details """
+
+    car = get_object_or_404(Car, pk=car_id)
+
+    context = {
+        'car': car,
+        'fixed_header': False
+    }
+
+    return render(request, 'showroom/car_detail.html', context)

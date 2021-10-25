@@ -2,7 +2,11 @@
 {% load static %}
 
 {% block page_header %}
-
+<header class="position-fixed w-100">
+    {% include 'includes/navigation/top-header.html' %}
+    {% include 'includes/navigation/second-header.html' %}
+    {% include 'includes/navigation/mobile-nav.html' %}
+</header>
 {% endblock %}
 
 {% block content %}
