@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block page_header %}
+<header class="position-fixed w-100">
+    {% include 'includes/navigation/top-header.html' %}
+    {% include 'includes/navigation/second-header.html' %}
+    {% include 'includes/navigation/mobile-nav.html' %}
+</header>
+<div class="book-in px-4">
+    <h2 class="text-white pb-2 p-2 jpc-black-bg">Book in</h2>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row mt-3 bg-secondary text-white">
+        <p class="text-center p-2">Please allow up to an extra 48 to 60 hours for your car to be serviced.<br> For now
+            we
+            only take online bookings for Ferrari's.</p>
+    </div>
+    <div class="row jpc-black-bg mt-3">
+        <h2 class="text-white text-center pt-2">Pick your service date</h2>
+        <form class="text-center form-row">
+            <input type="date">
+            <h2 class="text-white mt-2">Pick your car</h2>
+            <div class="">
+                <select name="manufacturer" id="">
+                    {% for manufacturer in manufacturers %}
+                    <option value="{{ manufacturer }}">{{ manufacturer }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div>
+                <select name="model" id="">
+                    {% for model in models %}
+                    <option value="{{ model.name }}">{{ model.name }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div>
+                <select class="" name="service_type" id="">
+                    <option value="annual">Annual</option>
+                    <option value="minor">Minor</option>
+                </select>
+            </div>
+            <button class="btn jpc-btn">Confirm Booking</button>
+        </form>
+    </div>
+</div>
+{% endblock %}
+{% block postloadjs %}
+{{ block.super }}
+<script>
+
+</script>
+{% endblock %}
