@@ -74,7 +74,6 @@ def car_detail(request, car_id):
 
     context = {
         'car': car,
-        'fixed_header': False
     }
 
     return render(request, 'showroom/car_detail.html', context)
