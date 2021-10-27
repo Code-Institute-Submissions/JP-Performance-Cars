@@ -5,9 +5,10 @@ from .models import ServiceCar, Manufacturer, Model
 # Create your views here.
 
 def book_in(request):
+
     service_cars = ServiceCar.objects.filter(do_service=True)
     manufacturers = Manufacturer.objects.all()
-    models = Model.objects.all()
+    models = Model.objects.all().order_by('name')
 
     context = {
         'service_cars': service_cars,

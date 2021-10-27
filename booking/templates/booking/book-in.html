@@ -21,30 +21,31 @@
     </div>
     <div class="row jpc-black-bg mt-3">
         <h2 class="text-white text-center pt-2">Pick your service date</h2>
-        <form class="text-center form-row">
+        <form class="text-center form-row" id="confirmbooking">
             <input type="date">
             <h2 class="text-white mt-2">Pick your car</h2>
-            <div class="">
+            <div class="mb-2">
                 <select name="manufacturer" id="">
                     {% for manufacturer in manufacturers %}
                     <option value="{{ manufacturer }}">{{ manufacturer }}</option>
                     {% endfor %}
                 </select>
             </div>
-            <div>
+            <div class="mb-2">
                 <select name="model" id="">
                     {% for model in models %}
                     <option value="{{ model.name }}">{{ model.name }}</option>
                     {% endfor %}
                 </select>
             </div>
-            <div>
+            <div class="mb-2">
                 <select class="" name="service_type" id="">
                     <option value="annual">Annual</option>
                     <option value="minor">Minor</option>
                 </select>
             </div>
-            <button class="btn jpc-btn">Confirm Booking</button>
+            <button class="btn jpc-btn mb-2">Confirm
+                Booking</button>
         </form>
     </div>
 </div>
