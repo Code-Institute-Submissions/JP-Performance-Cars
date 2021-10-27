@@ -1,19 +1,27 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
+from django.db.models import Q
 
 from .models import ServiceCar, Manufacturer, Model
 # Create your views here.
 
 def book_in(request):
    if request.method == "POST":
-        form_data = {
+       model = request.POST.get('model')
+       manufacturer = request.POST.get('manufacturer')
+
+       carQ = Q(name=model) & Q(manufacturer=manufacturer)
+       car_picked = ServiceCar.objects.filter(carQ)
+       form_data = {
             "date": request.POST.get('date'),
             "manufacturer": request.POST.get('manufacturer'),
-            "model": request.POST.get('model'),
-            "service_type": request.POST.get('service_type')
+            "model": model,
+            "service_type": request.POST.get('service_type'),
+            "car": car_picked,
         }
 
-        return redirect('checkout')
+       request.session['booking_request'] = form_data
+       return redirect('checkout')
    else:
 
     service_cars = ServiceCar.objects.filter(do_service=True)
