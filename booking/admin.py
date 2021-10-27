@@ -5,7 +5,8 @@ from .models import ServiceCar, Manufacturer, Model
 class ServiceCarAdmin(admin.ModelAdmin):
     list_display = (
         'name',
-        'service_price',
+        'annual_service_price',
+        'minor_service_price',
         'manufacturer',
         'model'
     )

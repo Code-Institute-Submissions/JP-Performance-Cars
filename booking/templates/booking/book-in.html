@@ -19,27 +19,30 @@
             we
             only take online bookings for Ferrari's.</p>
     </div>
-    <div class="row jpc-black-bg mt-3">
-        <h2 class="text-white text-center pt-2">Pick your service date</h2>
+    <div class="row jpc-black-bg mt-3 p-2">
+        <h2 class="text-white text-center mt-2">Pick your service date</h2>
         <form class="text-center form-row" id="confirmbooking">
-            <input type="date">
+            <input type="date" name="service_date">
             <h2 class="text-white mt-2">Pick your car</h2>
-            <div class="mb-2">
-                <select name="manufacturer" id="">
+            <div class="mb-4">
+                <select name="manufacturer" class="p-2">
+                    <option value="reset">Car Manufacturer</option>
                     {% for manufacturer in manufacturers %}
                     <option value="{{ manufacturer }}">{{ manufacturer }}</option>
                     {% endfor %}
                 </select>
             </div>
-            <div class="mb-2">
-                <select name="model" id="">
+            <div class="mb-4">
+                <select name="model" class="p-2">
+                    <option value="reset">Car Model</option>
                     {% for model in models %}
                     <option value="{{ model.name }}">{{ model.name }}</option>
                     {% endfor %}
                 </select>
             </div>
-            <div class="mb-2">
-                <select class="" name="service_type" id="">
+            <div class="mb-4">
+                <select name="service_type" class="p-2" id="">
+                    <option value="reset">Service Type</option>
                     <option value="annual">Annual</option>
                     <option value="minor">Minor</option>
                 </select>

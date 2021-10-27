@@ -35,7 +35,8 @@ class Model(models.Model):
 class ServiceCar(models.Model):
     
     name = models.CharField(max_length=50)
-    service_price = models.DecimalField(max_digits=6, decimal_places=2, default=False, null=True, blank=True)
+    annual_service_price = models.DecimalField(max_digits=6, decimal_places=2, default=False, null=True, blank=True)
+    minor_service_price = models.DecimalField(max_digits=6, decimal_places=2, default=False, null=True, blank=True)
     manufacturer = models.ForeignKey('Manufacturer', null=True, blank=True, on_delete=models.SET_NULL)
     model = models.ForeignKey('Model', null=True, blank=True, on_delete=models.SET_NULL)
     do_service = models.BooleanField(default=False, null=True, blank=True)
