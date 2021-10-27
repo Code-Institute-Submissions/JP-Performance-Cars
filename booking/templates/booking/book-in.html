@@ -21,7 +21,8 @@
     </div>
     <div class="row jpc-black-bg mt-3 p-2">
         <h2 class="text-white text-center mt-2">Pick your service date</h2>
-        <form class="text-center form-row" id="confirmbooking">
+        <form method="POST" action="{% url 'book_in' %}" class="text-center form-row" id="confirmbooking">
+            {% csrf_token %}
             <input type="date" name="service_date">
             <h2 class="text-white mt-2">Pick your car</h2>
             <div class="mb-4">
