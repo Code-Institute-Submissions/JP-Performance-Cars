@@ -11,14 +11,14 @@ def book_in(request):
        manufacturer = request.POST.get('manufacturer')
        
        carQ = Q(manufacturer__name=manufacturer) & Q(model__name=model)
-       car_picked = ServiceCar.objects.filter(carQ)
-       
+       car_id = ServiceCar.objects.filter(carQ).first().id
+
        form_data = {
             "date": request.POST.get('date'),
             "manufacturer": request.POST.get('manufacturer'),
             "model": model,
             "service_type": request.POST.get('service_type'),
-            "car": car_picked
+            "car_id": car_id
         }
 
        request.session['booking_request'] = form_data
