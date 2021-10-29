@@ -20,23 +20,40 @@ class Booking(models.Model):
     street_address1 = models.CharField(max_length=80, null=False, blank=False)
     street_address2 = models.CharField(max_length=80, null=True, blank=True)
     county = models.CharField(max_length=80, null=True, blank=True)
+
     annual = 1
     minor = 2
-    service_type = (
+
+    SERVICE_TYPE = (
         (annual, ('Annual')),
         (minor, ('Minor')),
     )
+
+    service_type = models.PositiveSmallIntegerField(
+        choices=SERVICE_TYPE,
+        default=minor,
+    )  
+
     booking_deposit = models.DecimalField(
         max_digits=10, decimal_places=2, null=False, default=0)
+
     car = models.ForeignKey(ServiceCar, on_delete=models.SET_NULL, null=True, blank=True, related_name='bookings')
+
     COMPLETED = 1
     IN_PROGRESS = 2
     NOT_STARTED = 3
+
     STATUS = (
         (COMPLETED, ('Completed')),
         (IN_PROGRESS, ('In Progress')),
         (NOT_STARTED, ('Not Started')),
     )
+
+    status = models.PositiveSmallIntegerField(
+        choices=STATUS,
+        default=NOT_STARTED,
+    )  
+    
     stripe_pid = models.CharField(
         max_length=254, null=True, blank=True, default='')
 
