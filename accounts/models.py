@@ -3,6 +3,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.db.models.signals import post_save
 from django.dispatch import receiver
+from django.core.exceptions import ObjectDoesNotExist
 
 from django_countries.fields import CountryField
 
@@ -18,10 +19,13 @@ class UserAccount(models.Model):
         return self.user.username
 
 @receiver(post_save, sender=User)
-def create_or_update_user_profile(sender, instance, created, **kwargs):
+def create_or_update_user_accounts(sender, instance, created, **kwargs):
     """
     Create or update the user profile
     """
     if created:
         UserAccount.objects.create(user=instance)
-    instance.userprofile.save()
+    try:
+        instance.useraccount.save()
+    except ObjectDoesNotExist:
+        UserAccount.objects.create(user=instance)
