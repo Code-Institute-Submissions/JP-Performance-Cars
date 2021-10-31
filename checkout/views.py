@@ -52,12 +52,14 @@ def checkout(request):
 
        if booking_form.is_valid():
            booking = booking_form.save(commit=False)
+           current_booking = booking_details(request)
            pid = request.POST.get('client_secret').split('_secret')[0]
            booking.stripe_pid = pid
            booking.save()
            try:
                car = ServiceCar.objects.get(id=booking_req["car_id"])
                booking.car = car
+               booking.booking_deposit = current_booking['deposit_cost']
                booking.save()
            except ServiceCar.DoesNotExist:
                messages.error(request, (

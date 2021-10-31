@@ -11,168 +11,149 @@
     {% include 'includes/navigation/second-header.html' %}
     {% include 'includes/navigation/mobile-nav.html' %}
 </header>
-<div class="px-4 mt-3">
-    <h2>Thank You</h2>
+<div class="px-4 mt-5">
+    <h2 class="text-center">Thank You For Your Booking.</h2>
 </div>
 {% endblock %}
 
 {% block content %}
 <div class="container">
-    <p>Your booking information is below. A confirmation email will be sent to
+    <hr>
+    <p class="text-center">Your booking information is below. A confirmation email will be sent to
         <strong>{{ booking.email }}</strong>.</p>
-</div>
-<div class="row">
-    <div class="col-12 col-lg-7">
-        <div class="booking-confirmation-wrapper p-2">
-            <div class="row">
-                <div class="col">
-                    <small>booking Info:</small>
+    <hr>
+    <div class="row">
+        <div class="col-12">
+            <div class="booking-confirmation-wrapper p-2">
+                <div class="row">
+                    <div class="col">
+                        <p class="fw-bold">Booking Info:</p>
+                    </div>
                 </div>
-            </div>
 
-            <div class="row">
-                <div class="col-12 col-md-4">
-                    <p class="mb-0 fw-bold">Booking Number</p>
+                <div class="row mt-2">
+                    <div class="col-12 col-md-4">
+                        <p class="mb-0">Booking Number</p>
+                    </div>
+                    <div class="col-12 col-md-8 text-md-end">
+                        <p class="mb-0 fw-bold">{{ booking.booking_number }}</p>
+                    </div>
                 </div>
-                <div class="col-12 col-md-8 text-md-end">
-                    <p class="mb-0">{{ booking.booking_number }}</p>
-                </div>
-            </div>
 
-            <div class="row">
-                <div class="col-12 col-md-4">
-                    <p class="mb-0 fw-bold">Booking Date</p>
+                <div class="row mt-2">
+                    <div class="col-12 col-md-4">
+                        <p class="mb-0">Booking Date</p>
+                    </div>
+                    <div class="col-12 col-md-8 text-md-end">
+                        <p class="mb-0 fw-bold">{{ booking.date }}</p>
+                    </div>
                 </div>
-                <div class="col-12 col-md-8 text-md-end">
-                    <p class="mb-0">{{ booking.date }}</p>
+                <div class="row mt-2">
+                    <div class="col-12 col-md-4">
+                        <p class="mb-0">Car Chosen For Service</p>
+                    </div>
+                    <div class="col-12 col-md-8 text-md-end">
+                        <p class="mb-0 fw-bold">
+                            {{ booking.car }}
+                        </p>
+                    </div>
                 </div>
-            </div>
+                <div class="row mt-2">
+                    <div class="col-12 col-md-4">
+                        <p class="mb-0">Service Type</p>
+                    </div>
+                    <div class="col-12 col-md-8 text-md-end">
+                        {% if booking.service_type == 1 %}
+                        <p class="mb-0 fw-bold">Annual</p>
+                        {% else %}
+                        <p class="mb-0 fw-bold">Minor</p>
+                        {% endif %}
+                    </div>
+                </div>
+                <div class="row mt-2">
+                    <div class="col-12 col-md-4">
+                        <p class="mb-0 ">Full Name</p>
+                    </div>
+                    <div class="col-12 col-md-8 text-md-end">
+                        <p class="mb-0 fw-bold">{{ booking.full_name }}</p>
+                    </div>
+                </div>
 
-            <div class="row">
-                <div class="col">
-                    <small>booking Details:</small>
+                <div class="row mt-2">
+                    <div class="col-12 col-md-4">
+                        <p class="mb-0 ">Address 1</p>
+                    </div>
+                    <div class="col-12 col-md-8 text-md-end">
+                        <p class="mb-0 fw-bold">{{ booking.street_address1 }}</p>
+                    </div>
                 </div>
-            </div>
 
-            <div class="row">
-                <div class="col-12 col-md-4">
-                    <p class="small mb-0 fw-bold">
-                        {{ booking.car }}
-                    </p>
+                {% if booking.street_address2 %}
+                <div class="row mt-2">
+                    <div class="col-12 col-md-4">
+                        <p class="mb-0 ">Address 2</p>
+                    </div>
+                    <div class="col-12 col-md-8 text-md-end">
+                        <p class="mb-0 fw-bold">{{ booking.street_address1 }}</p>
+                    </div>
                 </div>
-                <div class="col-12 col-md-8 text-md-end">
-                    <p class="small mb-0">{{ booking.service_type }}</p>
-                </div>
-            </div>
+                {% endif %}
 
-            <div class="row">
-                <div class="col-12 col-md-4">
-                    <p class="mb-0 fw-bold">Full Name</p>
+                {% if booking.county %}
+                <div class="row mt-2">
+                    <div class="col-12 col-md-4">
+                        <p class="mb-0 ">County</p>
+                    </div>
+                    <div class="col-12 col-md-8 text-md-end">
+                        <p class="mb-0 fw-bold">{{ booking.county }}</p>
+                    </div>
                 </div>
-                <div class="col-12 col-md-8 text-md-end">
-                    <p class="mb-0">{{ booking.full_name }}</p>
-                </div>
-            </div>
+                {% endif %}
 
-            <div class="row">
-                <div class="col-12 col-md-4">
-                    <p class="mb-0 fw-bold">Address 1</p>
+                <div class="row mt-2">
+                    <div class="col-12 col-md-4">
+                        <p class="mb-0 ">Town or City</p>
+                    </div>
+                    <div class="col-12 col-md-8 text-md-end">
+                        <p class="mb-0 fw-bold">{{ booking.town_or_city }}</p>
+                    </div>
                 </div>
-                <div class="col-12 col-md-8 text-md-end">
-                    <p class="mb-0">{{ booking.street_address1 }}</p>
-                </div>
-            </div>
 
-            {% if booking.street_address2 %}
-            <div class="row">
-                <div class="col-12 col-md-4">
-                    <p class="mb-0 fw-bold">Address 2</p>
+                {% if booking.postcode %}
+                <div class="row mt-2">
+                    <div class="col-12 col-md-4">
+                        <p class="mb-0 ">Postal Code</p>
+                    </div>
+                    <div class="col-12 col-md-8 text-md-end">
+                        <p class="mb-0 fw-bold">{{ booking.postcode }}</p>
+                    </div>
                 </div>
-                <div class="col-12 col-md-8 text-md-end">
-                    <p class="mb-0">{{ booking.street_address1 }}</p>
-                </div>
-            </div>
-            {% endif %}
+                {% endif %}
 
-            {% if booking.county %}
-            <div class="row">
-                <div class="col-12 col-md-4">
-                    <p class="mb-0 fw-bold">County</p>
+                <div class="row mt-2">
+                    <div class="col-12 col-md-4">
+                        <p class="mb-0 ">Country</p>
+                    </div>
+                    <div class="col-12 col-md-8 text-md-end">
+                        <p class="mb-0 fw-bold">{{ booking.country }}</p>
+                    </div>
                 </div>
-                <div class="col-12 col-md-8 text-md-end">
-                    <p class="mb-0">{{ booking.county }}</p>
-                </div>
-            </div>
-            {% endif %}
 
-            <div class="row">
-                <div class="col-12 col-md-4">
-                    <p class="mb-0 fw-bold">Town or City</p>
+                <div class="row mt-2">
+                    <div class="col-12 col-md-4">
+                        <p class="mb-0 ">Phone Number</p>
+                    </div>
+                    <div class="col-12 col-md-8 text-md-end">
+                        <p class="mb-0 fw-bold">{{ booking.phone_number }}</p>
+                    </div>
                 </div>
-                <div class="col-12 col-md-8 text-md-end">
-                    <p class="mb-0">{{ booking.town_or_city }}</p>
-                </div>
-            </div>
-
-            {% if booking.postcode %}
-            <div class="row">
-                <div class="col-12 col-md-4">
-                    <p class="mb-0 fw-bold">Postal Code</p>
-                </div>
-                <div class="col-12 col-md-8 text-md-end">
-                    <p class="mb-0">{{ booking.postcode }}</p>
-                </div>
-            </div>
-            {% endif %}
-
-            <div class="row">
-                <div class="col-12 col-md-4">
-                    <p class="mb-0 fw-bold">Country</p>
-                </div>
-                <div class="col-12 col-md-8 text-md-end">
-                    <p class="mb-0">{{ booking.country }}</p>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-12 col-md-4">
-                    <p class="mb-0 fw-bold">Phone Number</p>
-                </div>
-                <div class="col-12 col-md-8 text-md-end">
-                    <p class="mb-0">{{ booking.phone_number }}</p>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col">
-                    <small>Billing Info:</small>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-12 col-md-4">
-                    <p class="mb-0 fw-bold">booking Total</p>
-                </div>
-                <div class="col-12 col-md-8 text-md-end">
-                    <p class="mb-0">{{ booking.booking_total }}</p>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-12 col-md-4">
-                    <p class="mb-0 fw-bold">Delivery</p>
-                </div>
-                <div class="col-12 col-md-8 text-md-end">
-                    <p class="mb-0">{{ booking.delivery_cost }}</p>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-12 col-md-4">
-                    <p class="mb-0 fw-bold">Grand Total</p>
-                </div>
-                <div class="col-12 col-md-8 text-md-end">
-                    <p class="mb-0">{{ booking.grand_total }}</p>
+                <div class="row mt-2">
+                    <div class="col">
+                        <p>Deposit Payed:</p>
+                    </div>
+                    <div class="col-12 col-md-8 text-md-end">
+                        <p class="mb-0 fw-bold">{{ booking.booking_deposit }}</p>
+                    </div>
                 </div>
             </div>
         </div>
