@@ -1,4 +1,5 @@
-<div class="toast custom-toast rounded-0 border-top-0" data-autohide="false">
+<div class="toast custom-toast rounded-0 border-top-0" data-autohide="false" role="alert" aria-live="assertive"
+    aria-atomic="true">
     <div class="arrow-up arrow-success"></div>
     <div class="w-100 toast-capper bg-success"></div>
     <div class="toast-header bg-white text-dark">
@@ -6,10 +7,6 @@
         <button type="button" class="btn-close me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
     </div>
     <div class="toast-body bg-white">
-        <div class="row">
-            <div class="col">
-                {{ message }}
-            </div>
-        </div>
+        {{ message }}
     </div>
 </div>

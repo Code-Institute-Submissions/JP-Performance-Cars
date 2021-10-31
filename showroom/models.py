@@ -34,7 +34,7 @@ class Model(models.Model):
 class Car(models.Model):
 
     name = models.CharField(max_length=50)
-    description = models.TextField(max_length=254)
+    description = models.TextField()
     AVAILABLE = 1
     RESERVED = 2
     SOLD = 3
