@@ -63,8 +63,7 @@ def checkout(request):
                booking.save()
            except ServiceCar.DoesNotExist:
                messages.error(request, (
-                        "One of the products in your cart wasn't found in our database. "
-                        "Please call us for assistance!")
+                        "The car added is not in our database.")
                     )
                booking.delete()
                return redirect(reverse('book_in'))
