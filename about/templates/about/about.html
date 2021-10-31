@@ -1,0 +1,128 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_header %}
+<header class="w-100">
+    {% include 'includes/navigation/top-header.html' %}
+    {% include 'includes/navigation/second-header.html' %}
+    {% include 'includes/navigation/mobile-nav.html' %}
+</header>
+<div class="px-4 mt-3">
+    <h2>About</h2>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row text-center">
+        <h2>JP Performance Cars Values</h2>
+        <p>“Jason is fantastic – passionate about the cars, great skill and knowledge and is a good bloke –
+            highly
+            recommended”</p>
+        <p>Owners of Ferrari, Maserati and Lamborghini vehicles know how special their cars are and that they
+            need
+            special care. Our highly trained and skilled team have over 46 years of collective experience of
+            these
+            marques, meaning we have the necessary experience to maintain your car to the highest standard. You
+            will
+            find our workshop is fully equipped with all the necessary diagnostic systems and tools. We may not
+            be
+            the
+            biggest specialist, nor have the fanciest premises, but we continually strive to be the best.</p>
+    </div>
+    <div class="row text-center mt-3">
+        <h2 class="text-center">Opening Hours</h2>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Day</th>
+                    <th scope="col2">Time</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Monday</td>
+                    <td>9:00AM - 5:00PM</td>
+                </tr>
+                <tr>
+                    <td>Tuesday</td>
+                    <td>9:00AM - 5:00PM</td>
+                </tr>
+                <tr>
+                    <td>Wednesday</td>
+                    <td>9:00AM - 5:00PM</td>
+                </tr>
+                <tr>
+                    <td>Thursday</td>
+                    <td>9:00AM - 5:00PM</td>
+                </tr>
+                <tr>
+                    <td>Friday</td>
+                    <td>9:00AM - 5:00PM</td>
+                </tr>
+                <tr>
+                    <td>Saturday</td>
+                    <td>9:00AM - 2:00PM</td>
+                </tr>
+                <tr>
+                    <td>Sunday</td>
+                    <td>Closed.</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="row mt-3">
+        <h2 class="text-center">Locate Us</h2>
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2418.980898099521!2d-1.9187780840423003!3d52.67838273223154!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4870a0a2df0b162d%3A0xcf2f105f5bbbe1d3!2sJP%20Performance%20Cars%20Ltd!5e0!3m2!1sen!2suk!4v1635653803610!5m2!1sen!2suk"
+            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+    <div class="row mt-5 text-center">
+        <h2 class="text-center">More about JP Performance Cars</h2>
+        <p>We are a Ferrari, Maserati and Lamborghini specialist based in Burntwood, Staffordshire. We are conveniently
+            located only 3 miles from Junction T6 of the M6 Toll.
+
+            Owners of Ferrari, Maserati and Lamborghini vehicles know how special their cars are and that they need
+            special care. Our highly trained and skilled team have over 46 years of collective experience of these
+            marques, meaning we have the necessary experience to maintain your car to the highest standard. You will
+            find our workshop is fully equipped with all the necessary diagnostic systems and tools. We may not be the
+            biggest specialist, nor have the fanciest premises, but we continually strive to be the best.
+
+            We specialise in servicing, repairs and vehicle sales, but our experience runs from interior restoration ,
+            to finding solutions for difficult to fix problems and full engine rebuilds. We offer fixed price servicing
+            to give you peace of mind that you’ll always know what your bill will be. If, however, unforeseen work is
+            required, we will never undertake work without approval, nor will we needlessly try to upsell unnecessary
+            work.
+
+            Please have a good look around our website to see what services we provide. We are always glad to welcome
+            people into the workshop, so why not pop in to see what we are about and discuss your car
+        </p>
+        <p class="fw-bold">Services We Provide</p>
+        <ul class="unstyled-list">
+            <li>Routine Servicing</li>
+            <li>
+                Mechanical Repairs
+            </li>
+            <li>Premium Alloy Powder coated Wheel Refurbishment</li>
+            <li>
+                Electrical Repairs
+            </li>
+            <li>
+                Engine rebuilds
+            </li>
+            <li>
+                Paintwork
+            </li>
+            <li>
+                Interior refurbishment
+            </li>
+            <li>
+                Powder coating
+            </li>
+            <li>
+                Car restoration
+            </li>
+        </ul>
+    </div>
+</div>
+{% endblock %}

@@ -26,5 +26,5 @@ urlpatterns = [
     path('showroom/', include('showroom.urls')),
     path('book-in/', include('booking.urls')),
     path('checkout/', include('checkout.urls')),
-    
+    path('about/', include('about.urls'))
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
