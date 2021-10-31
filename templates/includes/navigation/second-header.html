@@ -22,10 +22,10 @@
                 <li><a href="{% url 'book_in' %}" class="nav-link px-2 link-dark">BOOK IN</a></li>
                 <li><a href="{% url 'about' %}" class="nav-link px-2 link-dark">ABOUT</a></li>
                 <li><a href="{% url 'contact' %}" class="nav-link px-2 link-dark">CONTACT</a></li>
-                <li><a href="#" class="nav-link px-2 link-dark">SERVICES</a></li>
+                <li><a href="{% url 'services' %}" class="nav-link px-2 link-dark">SERVICES</a></li>
                 <li><a href="#" class="nav-link px-2 link-dark">TESTIMONIALS</a></li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle px-2 link-dark" href="{% url 'showroom' %}"
+                    <a class="nav-link dropdown-toggle px-2 link-dark" href="{% url 'account' %}"
                         data-bs-toggle="dropdown" aria-expanded="false">ACCOUNT</a>
                     <div class="dropdown-menu" aria-labelledby="account">
                         {% if request.user.is_authenticated %}

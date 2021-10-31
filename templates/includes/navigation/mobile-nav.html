@@ -19,25 +19,40 @@
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle px-2 link-dark" href="{% url 'showroom' %}"
                         data-bs-toggle="dropdown" aria-expanded="false">SHOWROOM</a>
-                    <div class="dropdown-menu jpc-black-bg" aria-labelledby="dropdownMenu2">
-                        <a class="nav-link dropdown-item px-2 link-dark" href="{% url 'showroom' %}">All Cars</a>
-                        <a class="nav-link dropdown-item px-2 link-dark"
-                            href="{% url 'showroom' %}?manufacturer=Ferrari">Ferrari's
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                        <a class="dropdown-item" href="{% url 'showroom' %}">All Cars</a>
+                        <a class="dropdown-item" href="{% url 'showroom' %}?manufacturer=Ferrari">Ferrari's
                             For Sale</a>
-                        <a class="nav-link dropdown-item px-2 link-dark"
-                            href="{% url 'showroom' %}?manufacturer=Maserati">Maserati's
-                            For Sale</a>
-                        <a class="nav-link dropdown-item px-2 link-dark"
-                            href="{% url 'showroom' %}?manufacturer=Porsche">Porsche's
+                        <a class="dropdown-item" href="{% url 'showroom' %}?manufacturer=Maserati">Maserati's
                             For Sale</a>
                     </div>
                 </li>
                 <li><a href="{% url 'book_in' %}" class="nav-link px-2 link-dark">BOOK IN</a></li>
                 <li><a href="{% url 'about' %}" class="nav-link px-2 link-dark">ABOUT</a></li>
                 <li><a href="{% url 'contact' %}" class="nav-link px-2 link-dark">CONTACT</a></li>
-                <li><a href="#" class="nav-link px-2 link-dark">SERVICES</a></li>
+                <li><a href="{% url 'services' %}" class="nav-link px-2 link-dark">SERVICES</a></li>
                 <li><a href="#" class="nav-link px-2 link-dark">TESTIMONIALS</a></li>
-                <li><a href="#" class="nav-link px-2 link-dark">ACCOUNT</a></li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle px-2 link-light" href="{% url 'showroom' %}"
+                        data-bs-toggle="dropdown" aria-expanded="false">ACCOUNT</a>
+                    <div class="dropdown-menu" aria-labelledby="account">
+                        {% if request.user.is_authenticated %}
+                        {% url 'account' as url %}
+                        <a href="{% url 'account' %}" aria-label="Link to account" {% if request.path == url %}
+                            class="dropdown-item active" {% else %} class="dropdown-item" {% endif %}>My Account</a>
+                        {% url 'account_logout' as url %}
+                        <a href="{% url 'account_logout' %}" aria-label="Link to logout" {% if request.path == url %}
+                            class="dropdown-item active" {% else %} class="dropdown-item" {% endif %}>Logout</a>
+                        {% else %}
+                        {% url 'account_signup' as url %}
+                        <a href="{% url 'account_signup' %}" aria-label="Link to sign up" {% if request.path == url %}
+                            class="dropdown-item active" {% else %} class="dropdown-item" {% endif %}>Register</a>
+                        {% url 'account_login' as url %}
+                        <a href="{% url 'account_login' %}" aria-label="Link to login" {% if request.path == url %}
+                            class="dropdown-item active" {% else %} class="dropdown-item" {% endif %}>Login</a>
+                        {% endif %}
+                    </div>
+                </li>
             </ul>
         </div>
     </nav>

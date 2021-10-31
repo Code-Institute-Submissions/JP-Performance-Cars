@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_header %}
+<header class="w-100">
+    {% include 'includes/navigation/top-header.html' %}
+    {% include 'includes/navigation/second-header.html' %}
+    {% include 'includes/navigation/mobile-nav.html' %}
+</header>
+<div class="px-4 mt-3">
+    <h2>Services</h2>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row text-center">
+        <h2>What do we do?</h2>
+        <p>JP Performance cars offers a large range of services from engine rebuilds to alloy wheel referbishments to
+            electrical problem diagnosis and more. To get a full insight of what we do please ring us on
+            01543 682388.
+        </p>
+    </div>
+    <div class="row mt-4">
+        <h4 class="text-center"><i class="fas fa-wrench fa-2x"></i>Servicing, Repair, Maintenance and Restoration.</h4>
+    </div>
+    <div class="row mt-4">
+        <h4 class="text-center"><i class="fas fa-bolt fa-2x"></i>Advanced Electrical System Diagnosis.</h4>
+    </div>
+    <div class="row mt-4">
+        <h4 class="text-center"><i class="fas fa-cogs fa-2x"></i>Experts in Engine Builds with precision timing
+            setting</h4>
+    </div>
+</div>
+{% endblock %}

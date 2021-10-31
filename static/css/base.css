@@ -264,4 +264,9 @@ strong.highlight {
         max-height: 90vh;
         margin-top: 10px;
     }
+
+    .book-in,
+    .showroom {
+        height: 200px;
+    }
 }
