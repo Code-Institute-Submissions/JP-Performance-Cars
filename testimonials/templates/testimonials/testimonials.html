@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_header %}
+<header class="w-100">
+    {% include 'includes/navigation/top-header.html' %}
+    {% include 'includes/navigation/second-header.html' %}
+    {% include 'includes/navigation/mobile-nav.html' %}
+</header>
+<div class="px-4 mt-3">
+    <h2>Testimonials</h2>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div id="carouselExampleControls" class="carousel carousel-dark slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <h2>Natalie Bradshaw - </h2>
+                <p>I have recently had my black alloy wheels touched up after " touching the curb". Jason has done an
+                    amazing job. Nothing was too much trouble. Communication was 100% throughout, professional and
+                    personable. Being a woman going to a garage can be daunting, Jason put me at ease and spoke spoke in
+                    a
+                    language I understood. My wheels now look brand new. Thank you so much. I will not hesitate to
+                    reccomend
+                    you to any of my friends.</p>
+            </div>
+            <div class="carousel-item">
+                <h2>Sunny - </h2>
+                <p>Jason is great - very helpful and informative. Always happy to help and always looking to save you
+                    money
+                    where they can. Took my Maserati GT to change the A/C compressor and Jason got it sorted with little
+                    to
+                    no issues. Very decent price as well and kept costs to a minimum for me which was appreciated, even
+                    offered to pick me up when my car was ready which is nice. I would recommend Jason and JP
+                    Performance
+                    for your sports cars as they know what they are doing with their experience and friendly atmosphere,
+                    I
+                    will be using them moving forward!</p>
+            </div>
+            <div class="carousel-item">
+                <h2>Phoebe read - </h2>
+                <p>Recently had my alloy powder coated, They look amazing now I’m so happy.
+                    Would highly recommend JP Performance cars!! Thank you 😊
+                </p>
+            </div>
+        </div>
+        <div class="row text-center">
+            <div class="col-6">
+                <button class="btn" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+            </div>
+            <div class="col-6">
+                <button class="btn" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
