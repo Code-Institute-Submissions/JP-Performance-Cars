@@ -11,6 +11,7 @@ def book_in(request):
    if request.method == "POST":
        form = {
             'service_date': request.POST.get('service_date'),
+            'service_type': request.POST.get('service_type')
        }
        if form["service_date"]:
            service_date = datetime.strptime(form["service_date"], '%Y-%m-%d').date()
@@ -18,16 +19,24 @@ def book_in(request):
               model = request.POST.get('model')
               manufacturer = request.POST.get('manufacturer')
               carQ = Q(manufacturer__name=manufacturer) & Q(model__name=model)
-              car_id = ServiceCar.objects.filter(carQ).first().id
-              form_data = {
-                  "date": request.POST.get('date'),
-                  "manufacturer": request.POST.get('manufacturer'),
-                  "model": model,
-                  "service_type": request.POST.get('service_type'),
-                  "car_id": car_id
-              }
-              request.session['booking_request'] = form_data
-              return redirect('checkout')
+              if ServiceCar.objects.filter(carQ):
+                  if form["service_type"] == "annual" or form["service_type"] == "minor":
+                    car_id = ServiceCar.objects.filter(carQ).first().id
+                    form_data = {
+                        "date": request.POST.get('date'),
+                        "manufacturer": request.POST.get('manufacturer'),
+                        "model": model,
+                        "service_type": request.POST.get('service_type'),
+                        "car_id": car_id
+                    }
+                    request.session['booking_request'] = form_data
+                    return redirect('checkout')
+                  else:
+                    messages.error(request, 'Please pick a service type.')
+                    return redirect(reverse('book_in'))
+              else:
+                  messages.error(request, 'Please pick another car.')
+                  return redirect(reverse('book_in'))
            else:
                messages.error(request, 'Your book in date can not be in the past. \
                             Please select another date.')
